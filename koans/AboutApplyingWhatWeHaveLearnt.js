@@ -39,6 +39,27 @@ describe("About Applying What We Have Learnt", function() {
       var productsICanEat = [];
 
       /* solve using filter() & all() / any() */
+//***********************************************************************************
+// My code using .all and IF statements
+function foods(canEat) {
+  if (canEat === "mushrooms"){
+    return false;
+  } else {
+    return true;
+  }
+}
+var foodSort = [];
+for (var i = 0; i<5; i++){
+  foodCheck = products[i].ingredients;
+  if (_(foodCheck).all(foods)===true){
+    if (products[i].containsNuts===false){
+      foodSort[i]=products[i]
+      console.log("You can eat this=",foodSort[i].name);
+    }
+  };
+}
+//***********************************************************************************
+
 
       expect(productsICanEat.length).toBe(0);
   });
@@ -62,7 +83,7 @@ describe("About Applying What We Have Learnt", function() {
     var sum = 233168;    /* try chaining range() and reduce() */
 
     expect(233168).toBe(233168);
-  })
+  });
 
   /*********************************************************************************/
    it("should count the ingredient occurrence (imperative)", function () {
